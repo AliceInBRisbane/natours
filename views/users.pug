@@ -1,0 +1,16 @@
+extends base 
+
+block content 
+    main.main 
+        .card-container 
+            each user in users 
+                .card
+                    .card__header
+                        .card__picture
+                                img.reviews__avatar-img(src=`/img/users/${user.photo}`, alt=`${user.name}`)
+                                h6.reviews__user= user.name
+                                h6.reviews__user= user.email
+                        h3.heading-tertirary
+                                button.btn.btn--small.btn--green#delete-user(data-user-id=`${user.id}`) delete user
+            a.btn--green.btn--small.span-all-rows(href='/signup')  
+                            h1  ADD A USER NOW! 
